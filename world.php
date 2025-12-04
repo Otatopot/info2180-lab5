@@ -19,21 +19,38 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $coun = $conn->query("SELECT * FROM countries WHERE name LIKE '%$country%'");
     $country_results = $coun->fetchAll(PDO::FETCH_ASSOC); 
     //Replace the above with SQL functionality.?>
-    <ul>
-        <?php foreach ($country_results as $row): ?>
-        <li><?= $row['name'] . ' is ruled by ' . $row['head_of_state']; ?></li>
-        <?php endforeach; ?>
-    </ul>
+    <table style="width:100%">
+      <tr>
+        <th>Name</th>
+        <th>Continent</th>
+        <th>Independence</th>
+        <th>Head of State</th>
+      </tr>
+      <?php foreach ($country_results as $row): ?>
+      <tr>
+        <th><?= $row['name']; ?></th>
+        <th><?= $row['continent']; ?></th>
+        <th><?= $row['independence_year']; ?></th>
+        <th><?= $row['head_of_state']; ?></th>
+      </tr>  
+      <?php endforeach; ?>
     
-
-
-
 
 <?php $query = htmlspecialchars(trim($_REQUEST['country'])); ?>
     <?php if (empty($query)==TRUE): ?>
-      <ul>
-        <?php foreach ($results as $row): ?>
-        <li><?= $row['name'] . ' is ruled by ' . $row['head_of_state']; ?></li>
-        <?php endforeach; ?>
-      </ul>
+      <table style="width:100%">
+      <tr>
+        <th>Name</th>
+        <th>Continent</th>
+        <th>Independence</th>
+        <th>Head of State</th>
+      </tr>
+      <?php foreach ($country_results as $row): ?>
+      <tr>
+        <th><?= $row['name']; ?></th>
+        <th><?= $row['continent']; ?></th>
+        <th><?= $row['independence_year']; ?></th>
+        <th><?= $row['head_of_state']; ?></th>
+      </tr>  
+      <?php endforeach; ?>
     <?php endif ?>
