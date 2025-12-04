@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     var httpRequest = new  XMLHttpRequest();
     //makes this the url of website.
     //remove the jamaica later and add the entered query to the url later
-    let url = "http://localhost/info2180_code/info2180-lab5/world.php?country="; 
-    let search = document.getElementById("lookup");
+    let url = "http://localhost/info2180_code/info2180-lab5/world.php?country=";
+    let searchButtons = document.querySelectorAll("button"); 
+    //let search = document.getElementById("lookup");
     let result = document.getElementById("result");
 
     function showCountries() {
@@ -18,15 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    search.addEventListener("click", function(event) {
-        event.preventDefault();
-        var input_tag = document.querySelector('#country');
-        var query = input_tag.value.trim()
-        console.log(query);
+    searchButtons.forEach(function(search) {
+        search.addEventListener("click", function(event) {
+            event.preventDefault();
+            var input_tag = document.querySelector('#country');
+            var country = input_tag.value.trim();
+            var lookup = event.target.id;
+            console.log(country);
 
-        httpRequest.onreadystatechange = showCountries;
-        httpRequest.open('GET', url + query, true);
-        httpRequest.send();
+            httpRequest.onreadystatechange = showCountries;
+            httpRequest.open('GET', url + country + "& lookup=" + lookup, true);
+            httpRequest.send();
+        })
     })
 
 })
