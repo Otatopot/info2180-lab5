@@ -1,1 +1,82 @@
 /* Add your own styles */
+
+body {
+    background-color: #f1eee7;
+    color: black;
+    font-size: 18px;
+    
+}
+
+header {
+    background-color: #33504b;
+    color:white;
+    font-size: 18px;
+    border: 1px solid #33504b;
+    margin: -8px;
+    padding: 25px 0px;
+    text-align: center;
+}
+
+main {
+    margin-top: 50px;
+    align-content: center;
+}
+
+div#controls {
+    width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+button {
+    width: 120px;
+    text-align: center;
+    margin: 10px 0px 10px 10px; 
+    background-color: #299b6a;
+    color: white;
+    border: none;
+    padding: 8px 0px;
+    border-radius: 3px;
+}
+
+button#city {
+    background-color: #5A67D8;
+}
+
+
+input {
+    width: 500px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, 0.3);
+}
+
+table {  
+    margin: 0px auto;
+    border-collapse: collapse;
+    table-layout: auto;
+    max-width: 60%;
+}
+
+table tr th{
+    border: 1px solid #d2c6ae;
+    font-weight: lighter;
+}
+
+tr th {
+    padding: 7px;
+}
+
+th {
+    text-align: left;  
+}
+
+tr:first-child th {
+    font-weight: bold;
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: #fcfbf9;
+}
